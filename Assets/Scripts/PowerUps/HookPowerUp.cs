@@ -24,14 +24,13 @@ public class HookPowerUp : PowerUp
             mouseWorldPosition.y = 0.1f; // Sobe a posição em 10 cm (metade da altura do spinner)
             playerPosition.y = 0.1f;
 
-            // Visualização do raio na cena
+            
             Vector3 hookDir = mouseWorldPosition - playerPosition;
             hookDir.Normalize();
-            Debug.DrawRay(playerPosition, hookDir * range, Color.red, 2);
+            Debug.DrawRay(playerPosition, hookDir * range, Color.red, 2); // Visualização do raio na cena
 
             if (Physics.Raycast(playerPosition, hookDir, out RaycastHit hitHook, range, layerMask)) // Raycast para lançar o gancho e procurar por outros spinners no caminho
             {
-                Debug.Log("Acertou");
                 Hit(hitHook.collider.gameObject);
             }
         }
