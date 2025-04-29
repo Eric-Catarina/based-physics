@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 143518193661150769}
   - component: {fileID: 5222196919259916382}
   - component: {fileID: 5408459673324549500}
+  - component: {fileID: 4246329300918677789}
   m_Layer: 7
   m_Name: EnemySpinner
   m_TagString: Enemy
@@ -48,9 +49,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740ae73e01667eb4c8d204a40653d044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactEffectPrefab: {fileID: 7353365795448893950, guid: 9e569214abc3e38469605371e5d6902b, type: 3}
   movementSpeed: 8
   angularSpeed: 2
-  rotationMultiplier: 5
+  rotationMultiplier: 4
+  energyCost: 20
+  energyRegenTime: 0.1
+  energyRegenAmount: 0.1
   maxMovementSpeedToAdd: 16
   minAngularSpeed: 100
   maxAngularSpeed: 800
@@ -67,7 +72,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splineContainer: {fileID: 0}
-  splineToFollowIndex: 1
+  splineToFollowIndex: -1
 --- !u!54 &5222196919259916382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,6 +122,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8142262219075449363, guid: 8ea95af25ce072345847f4069d838e1d, type: 3}
+--- !u!114 &4246329300918677789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260122628828454880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9b985b0a425e949926a84edcb9af14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueMax: 100
+  valueMin: 0
+  isMaxOnStart: 1
 --- !u!1 &7294920794975675825
 GameObject:
   m_ObjectHideFlags: 0

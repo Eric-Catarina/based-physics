@@ -111,6 +111,8 @@ GameObject:
   - component: {fileID: 6988604195428209560}
   - component: {fileID: 1502137945107541424}
   - component: {fileID: 7832315452973592013}
+  - component: {fileID: 7452709220679818542}
+  - component: {fileID: 4942617511948864502}
   m_Layer: 0
   m_Name: PlayerSpinner
   m_TagString: Player
@@ -149,9 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740ae73e01667eb4c8d204a40653d044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impactEffectPrefab: {fileID: 7353365795448893950, guid: 9e569214abc3e38469605371e5d6902b, type: 3}
   movementSpeed: 8
   angularSpeed: 2
-  rotationMultiplier: 5
+  rotationMultiplier: 4
+  energyCost: 20
+  energyRegenTime: 0.5
+  energyRegenAmount: 0.1
   maxMovementSpeedToAdd: 16
   minAngularSpeed: 100
   maxAngularSpeed: 800
@@ -229,6 +235,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentPowerUp: {fileID: 5432655830440442334}
+--- !u!114 &7452709220679818542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077121762707084269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d9b985b0a425e949926a84edcb9af14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueMax: 100
+  valueMin: 0
+  isMaxOnStart: 1
+--- !u!114 &4942617511948864502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077121762707084269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d7d9b1f510268488eed688537024d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameplayHud: {fileID: 0}
 --- !u!1 &7765544368433726146
 GameObject:
   m_ObjectHideFlags: 0

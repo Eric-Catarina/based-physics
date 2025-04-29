@@ -19,7 +19,10 @@ public class EnemyInputs : CharacterInputs
     // Start is called before the first frame update
     void Start()
     {
-        splineToFollow = splineContainer.Splines[splineToFollowIndex];
+        if (splineToFollowIndex != -1)
+        {
+            splineToFollow = splineContainer.Splines[splineToFollowIndex];
+        }
 
         startPosition = transform.position;
         startPosition.y = 0;
@@ -28,19 +31,21 @@ public class EnemyInputs : CharacterInputs
     // Update is called once per frame
     void Update()
     {
-        targetPosition = splineToFollow.Next(currentKnot - 1).Position;
-        targetPosition += startPosition;
-
-        Vector3 direction = targetPosition - transform.position;
-        float distance = Mathf.Abs((direction).magnitude);
-
-        movingDirection = direction.normalized;
-
-        Debug.Log(distance);
-
-        if (distance < 2)
+        if (splineToFollowIndex != -1)
         {
-            currentKnot++;
+            targetPosition = splineToFollow.Next(currentKnot - 1).Position;
+            targetPosition += startPosition;
+
+            Vector3 direction = targetPosition - transform.position;
+            float distance = Mathf.Abs((direction).magnitude);
+        
+
+            movingDirection = direction.normalized;
+
+            if (distance < 2)
+            {
+                currentKnot++;
+            }
         }
 
     }
