@@ -113,4 +113,12 @@ public class CharacterMovement : MonoBehaviour
 
         currentAngularSpeed = Mathf.Lerp(minAngularSpeed * rotMultiplier, maxAngularSpeed * rotMultiplier, speedPercentage);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Enemy"))
+        {
+
+        }
+    }
 }
