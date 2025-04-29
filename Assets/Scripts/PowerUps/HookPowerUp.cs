@@ -13,6 +13,13 @@ public class HookPowerUp : PowerUp
     bool hasHit = false;
     Transform hitObjectTransform;
     Rigidbody hitObjectRb;
+    LineRenderer hookRenderer;
+
+    public override void Start()
+    {
+        base.Start(); // Chama o Start da classe pai
+        hookRenderer = GameObject.Find("HookRenderer").GetComponent<LineRenderer>();
+    }
 
     public override void Activate()
     {
@@ -32,7 +39,15 @@ public class HookPowerUp : PowerUp
             if (Physics.Raycast(playerPosition, hookDir, out RaycastHit hitHook, range, layerMask)) // Raycast para lançar o gancho e procurar por outros spinners no caminho
             {
                 Hit(hitHook.collider.gameObject);
+                Debug.Log(hit.point);
             }
+            else
+            {
+                hookRenderer.SetPosition(1, playerPosition + hookDir * range);
+            }
+            hookRenderer.enabled = true; // Liga a visibilidade do gancho
+
+            Invoke("DisablePull", duration);
         }
     }
 
@@ -41,25 +56,30 @@ public class HookPowerUp : PowerUp
         hasHit = true;
         hitObjectTransform = hitObject.transform;
         hitObjectRb = hitObject.GetComponent<Rigidbody>();
-
-        Invoke("DisablePull", duration);
     }
 
     void DisablePull()
     {
         hasHit = false;
+        hookRenderer.enabled = false;
     }
 
     private void Update()
     {
         playerPosition = playerTransform.position;
+        hookRenderer.SetPosition(0, playerPosition + 0.1f * Vector3.up);
 
         if (hasHit)
         {
+            hookRenderer.SetPosition(1, hitObjectTransform.position + 0.1f * Vector3.up);
             Vector3 pullForceDir = playerPosition - hitObjectTransform.position;
             pullForceDir.Normalize();
 
             hitObjectRb.AddForce(pullForceDir * hookPullStrength);
+        }
+        else
+        {
+            hookRenderer.SetPosition(1, Vector3.Lerp(hookRenderer.GetPosition(1), playerPosition + 0.1f * Vector3.up, 5 * Time.deltaTime));
         }
     }
 }

@@ -36,7 +36,7 @@ public class EnemyInputs : CharacterInputs
 
         movingDirection = direction.normalized;
 
-        Debug.Log(distance);
+        // Debug.Log(distance);
 
         if (distance < 2)
         {
