@@ -11,7 +11,7 @@ public abstract class PowerUp : MonoBehaviour
 
     public void Start()
     {
-        playerTransform = GameObject.Find("Player").GetComponent<Transform>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     public abstract void Activate(); // Chamado quando o jogador ativa o powerup (com o clique esquerdo do mouse)

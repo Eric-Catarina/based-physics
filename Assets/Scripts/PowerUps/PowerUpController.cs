@@ -9,7 +9,7 @@ public class PowerUpController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentPowerUp != null && Input.GetMouseButtonDown(0))
+        if (currentPowerUp != null && Input.GetButtonDown("Fire1"))
         {
             currentPowerUp.Activate();
         }

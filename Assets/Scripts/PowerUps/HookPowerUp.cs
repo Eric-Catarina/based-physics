@@ -21,8 +21,8 @@ public class HookPowerUp : PowerUp
         if (Physics.Raycast(rayFromCamera, out RaycastHit hit, 1000, rayFromCameraLayerMask)) // Raycast para determinar a posição em que o jogador deseja atirar o gancho
         {
             mouseWorldPosition = hit.point;
-            mouseWorldPosition.y = 0.1f; // Sobe a posição em 10 cm (metade da altura do spinner)
-            playerPosition.y = 0.1f;
+            playerPosition.y += 0.1f;
+            mouseWorldPosition.y = playerPosition.y; // Sobe a posição em 10 cm (metade da altura do spinner)
 
             
             Vector3 hookDir = mouseWorldPosition - playerPosition;

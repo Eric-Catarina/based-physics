@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 143518193661150769}
   - component: {fileID: 5222196919259916382}
   - component: {fileID: 5408459673324549500}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemySpinner
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splineContainer: {fileID: 0}
-  splineToFollowIndex: 0
+  splineToFollowIndex: 1
 --- !u!54 &5222196919259916382
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 690920260740941823}
   - component: {fileID: 7923160374857384495}
   - component: {fileID: 7339672673587828819}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}

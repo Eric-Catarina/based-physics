@@ -20,8 +20,8 @@ public class PlayerInputs : CharacterInputs
         movingDirection = direction.normalized;
 
         #endregion
-        
-        isBoostingRotation = Input.GetButton("Fire1");
-        isUsingPowerup = Input.GetButton("Fire2");
+
+        isUsingPowerup = Input.GetButton("Fire1");
+        isBoostingRotation = Input.GetButton("Fire2");
     }
 }
