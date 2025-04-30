@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 820329388}
   - component: {fileID: 820329387}
   - component: {fileID: 820329390}
+  - component: {fileID: 820329391}
   m_Layer: 5
   m_Name: Restart
   m_TagString: Untagged
@@ -895,6 +896,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneID: 0
+--- !u!114 &820329391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820329385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7d7866717c629488a735c18bce87b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &879139898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -976,13 +989,14 @@ GameObject:
   - component: {fileID: 883473303}
   - component: {fileID: 883473305}
   - component: {fileID: 883473304}
+  - component: {fileID: 883473306}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &883473303
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1056,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883473302}
   m_CullTransparentMesh: 1
+--- !u!114 &883473306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 883473302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f846a438895c9d1038621490e54a016f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animateScale: 1
+  scaleMultiplier: 1
+  scaleDuration: 0.5
+  scaleEase: 27
+  shouldAnimateWhilePaused: 1
+  animateOnDeactivateOrDestroy: 1
+  deactivationScaleDuration: 0.5
+  deactivationEase: 26
+  fadeOutDuration: 0.5
+  animateRotation: 0
+  rotationAxis: {x: 0, y: 360, z: 0}
+  rotationDuration: 2
+  animateVerticalBounce: 0
+  bounceHeight: 0.5
+  bounceDuration: 1
+  bounceEase: 4
+  animateHorizontalBounce: 0
+  horizontalBounceDistance: 1
+  horizontalBounceDuration: 1
+  horizontalBounceEase: 4
+  rainbowMode: 0
+  rainbowSpeed: 5
 --- !u!1 &887716477
 GameObject:
   m_ObjectHideFlags: 0
@@ -1322,14 +1370,13 @@ GameObject:
   - component: {fileID: 1005373248}
   - component: {fileID: 1005373247}
   - component: {fileID: 1005373246}
-  - component: {fileID: 1005373250}
   m_Layer: 5
   m_Name: GameEndCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1005373246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1413,40 +1460,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1005373250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005373245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f846a438895c9d1038621490e54a016f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animateScale: 0
-  scaleMultiplier: 1.5
-  scaleDuration: 0.5
-  scaleEase: 27
-  shouldAnimateWhilePaused: 1
-  animateOnDeactivateOrDestroy: 1
-  deactivationScaleDuration: 0.5
-  deactivationEase: 26
-  fadeOutDuration: 0.5
-  animateRotation: 0
-  rotationAxis: {x: 0, y: 360, z: 0}
-  rotationDuration: 2
-  animateVerticalBounce: 0
-  bounceHeight: 0.5
-  bounceDuration: 1
-  bounceEase: 4
-  animateHorizontalBounce: 0
-  horizontalBounceDistance: 1
-  horizontalBounceDuration: 1
-  horizontalBounceEase: 4
-  rainbowMode: 0
-  rainbowSpeed: 5
 --- !u!4 &1018265081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8807920078806445853, guid: 9ba5da1bc77f8d445bb756ba8fd90529, type: 3}
@@ -1684,11 +1697,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreToWin: 5
   currentScore: 0
-  victoryPanel: {fileID: 1005373245}
+  victoryPanel: {fileID: 883473302}
   victoryText: {fileID: 1763724450}
-  defeatPanel: {fileID: 1005373245}
+  defeatPanel: {fileID: 883473302}
   enemiesLeftText: {fileID: 968177965}
-  totalEnemies: 1
+  totalEnemies: 2
 --- !u!4 &1111760442
 Transform:
   m_ObjectHideFlags: 0
@@ -2385,6 +2398,14 @@ PrefabInstance:
       propertyPath: gameplayHud
       value: 
       objectReference: {fileID: 2075452708}
+    - target: {fileID: 6180776287624117817, guid: 651cb1f7b8955394093c4bd569aecdaf, type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6180776287624117817, guid: 651cb1f7b8955394093c4bd569aecdaf, type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: 6.283185
+      objectReference: {fileID: 0}
     - target: {fileID: 6464262150052909611, guid: 651cb1f7b8955394093c4bd569aecdaf, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
