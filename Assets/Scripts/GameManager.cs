@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         Time.timeScale = 0; // Para o tempo
-        // defeatPanel.SetActive(true);
-        defeatPanel.GetComponent<Juice>().PlayActivationAnimation();
+        defeatPanel.SetActive(true);
+        // defeatPanel.GetComponent<Juice>().PlayActivationAnimation();
         victoryText.color = Color.red;
         Debug.Log("Você Perdeu!");
     }
