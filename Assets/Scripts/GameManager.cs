@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        scoreToWin = totalEnemies;
         if (Instance == null)
         {
             Instance = this;
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (currentScore >= scoreToWin)
         {
             WinGame();
+            
         }
     }
 
@@ -64,7 +66,9 @@ public class GameManager : MonoBehaviour
     public void LoseGame()
     {
         Time.timeScale = 0; // Para o tempo
-        defeatPanel.SetActive(true);
+        // defeatPanel.SetActive(true);
+        defeatPanel.GetComponent<Juice>().PlayActivationAnimation();
+        victoryText.color = Color.red;
         Debug.Log("Você Perdeu!");
     }
 
@@ -72,8 +76,10 @@ public class GameManager : MonoBehaviour
     void WinGame()
     {
         Time.timeScale = 0; // Para o tempo
-        victoryPanel.SetActive(true);
+        defeatPanel.GetComponent<Juice>().PlayActivationAnimation();
+
         victoryText.color = Color.green;
+        victoryText.text = "You Win!";
         Debug.Log("Você Ganhou!");
     }
 

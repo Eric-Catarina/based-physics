@@ -17,6 +17,6 @@ public class Player : MonoBehaviour
         // ... Lógica de morte do player (efeitos sonoros, animações, etc.) ...
 
         GameManager.Instance.LoseGame(); // Chama a função LoseGame no GameManager
-        Destroy(gameObject); // Destrói o player
+        Destroy(gameObject,100); // Destrói o player
     }
 }
