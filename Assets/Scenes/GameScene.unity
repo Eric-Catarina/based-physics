@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: d9dca9ae1786c394f9e79c637aa9a7bf, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -96,7 +96,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 9eac0204424acae47ab64d608ca7c582, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   victoryText: {fileID: 1763724450}
   defeatPanel: {fileID: 883473302}
   enemiesLeftText: {fileID: 968177965}
-  totalEnemies: 2
+  totalEnemies: 6
 --- !u!4 &1111760442
 Transform:
   m_ObjectHideFlags: 0
@@ -2087,6 +2087,10 @@ PrefabInstance:
       value: Spimba
       objectReference: {fileID: 0}
     - target: {fileID: 7109853412598409666, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
+      propertyPath: m_margin.z
+      value: 1.007904
+      objectReference: {fileID: 0}
+    - target: {fileID: 7109853412598409666, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2234,6 +2238,7 @@ PrefabInstance:
     - {fileID: 7413082206296156324, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
     - {fileID: 5516758023216238034, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
     - {fileID: 6142522523142419678, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
+    - {fileID: 5199446589103051220, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8126757527820338021, guid: 2b06bc632fd67b0598f3b18c05037d7f, type: 3}
       insertIndex: -1
