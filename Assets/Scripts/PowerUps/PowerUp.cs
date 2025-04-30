@@ -20,7 +20,7 @@ public abstract class PowerUp : MonoBehaviour
     public abstract void Activate(); // Chamado quando o jogador ativa o powerup (com o clique esquerdo do mouse)
     public abstract void Hit(GameObject hitObject); // Chamado quando o powerup atinge a sua condição de sucesso
 
-    public IEnumerator Collect()
+    public virtual IEnumerator Collect()
     {
         GetComponentInChildren<MeshRenderer>().enabled = false; // Desliga a visualizacao do powerup
         GetComponent<BoxCollider>().enabled = false; // Impede que o powerup seja coletado novamente antes do periodo de cooldown acabar

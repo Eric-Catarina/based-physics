@@ -6,9 +6,18 @@ public class GroundPunchPowerUp : PowerUp
 {
     public float pushStrength = 1;
     Vector3 playerPosition;
+    ParticleSystem rangeVFX;
+
+    public override void Start()
+    {
+        base.Start();
+        rangeVFX = GameObject.Find("VFXGroundPunchRange").GetComponent<ParticleSystem>();
+    }
 
     public override void Activate()
     {
+        rangeVFX.Stop(false, ParticleSystemStopBehavior.StopEmittingAndClear);
+
         playerPosition = playerTransform.position;
 
         RaycastHit[] hitObjects = Physics.SphereCastAll(playerTransform.position, range, Vector3.up, range, layerMask);
@@ -32,8 +41,14 @@ public class GroundPunchPowerUp : PowerUp
         hitObjectRb.AddForce(pushForce * (pushStrength/hitObjectDistance), ForceMode.Impulse); // Quanto mais perto o objeto atingido estiver do player, maio sera a forca aplicada
     }
 
+    public override IEnumerator Collect()
+    {
+        rangeVFX.Play();
+        return base.Collect();
+    }
+
     // Visualização da esfera na cena durante o Play Mode
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         if (playerTransform != null)

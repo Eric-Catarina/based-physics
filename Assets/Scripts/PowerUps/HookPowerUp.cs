@@ -74,12 +74,11 @@ public class HookPowerUp : PowerUp
             hookRenderer.SetPosition(1, hitObjectTransform.position + 0.1f * Vector3.up);
             Vector3 pullForceDir = playerPosition - hitObjectTransform.position;
             pullForceDir.Normalize();
-
             hitObjectRb.AddForce(pullForceDir * hookPullStrength);
         }
         else
         {
-            hookRenderer.SetPosition(1, Vector3.Lerp(hookRenderer.GetPosition(1), playerPosition + 0.1f * Vector3.up, 5 * Time.deltaTime));
+            hookRenderer.SetPosition(1, Vector3.Lerp(hookRenderer.GetPosition(1), playerPosition + 0.1f * Vector3.up, 3 * Time.deltaTime));
         }
     }
 }
