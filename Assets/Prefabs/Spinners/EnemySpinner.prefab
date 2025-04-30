@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5222196919259916382}
   - component: {fileID: 5408459673324549500}
   - component: {fileID: 4246329300918677789}
+  - component: {fileID: -2264456282521124661}
   m_Layer: 7
   m_Name: EnemySpinner
   m_TagString: Enemy
@@ -54,8 +55,6 @@ MonoBehaviour:
   angularSpeed: 2
   rotationMultiplier: 4
   energyCost: 20
-  energyRegenTime: 0.1
-  energyRegenAmount: 0.1
   maxMovementSpeedToAdd: 16
   minAngularSpeed: 100
   maxAngularSpeed: 800
@@ -137,6 +136,19 @@ MonoBehaviour:
   valueMax: 100
   valueMin: 0
   isMaxOnStart: 1
+--- !u!114 &-2264456282521124661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260122628828454880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd19d2fe56663c672a739b859aa881a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voidYPosition: -10
 --- !u!1 &7294920794975675825
 GameObject:
   m_ObjectHideFlags: 0

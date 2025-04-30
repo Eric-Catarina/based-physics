@@ -5269,6 +5269,7 @@ GameObject:
   - component: {fileID: 7832315452973592013}
   - component: {fileID: 7452709220679818542}
   - component: {fileID: 4942617511948864502}
+  - component: {fileID: 2594439471414128544}
   m_Layer: 0
   m_Name: PlayerSpinner
   m_TagString: Player
@@ -5419,6 +5420,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameplayHud: {fileID: 0}
+--- !u!114 &2594439471414128544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7077121762707084269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b47d83e2c8e5792a74368b0f154d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7765544368433726146
 GameObject:
   m_ObjectHideFlags: 0
